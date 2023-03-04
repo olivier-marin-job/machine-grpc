@@ -1,6 +1,6 @@
 # Générer les prototypes gRPC
 
-## 1. Installer les outils conteneur Ubuntu
+## 1. Installer les outils depuis un conteneur Ubuntu
 
 1.a. Charger et ouvrir un terminal
 
