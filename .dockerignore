@@ -1,0 +1,5 @@
+# ignore .git, .idea folders and .gitignore file
+
+.git
+.gitignore
+.idea
