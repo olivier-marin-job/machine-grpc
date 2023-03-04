@@ -1,0 +1,1 @@
+# Générer les prototypes gRPC
