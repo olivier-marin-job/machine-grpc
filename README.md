@@ -31,13 +31,32 @@ $ wget https://repo1.maven.org/maven2/io/grpc/protoc-gen-grpc-java/1.40.1/protoc
 $ chmod +x protoc-gen-grpc-java-1.40.1-linux-x86_64.exe
 ```
 
-1.d. Quitter le conteneur
+1.d. Générer des Stubs depuis le plugin protoc-gen-grpc-java
+
+```shell
+$ docker container start -ai machine-grpc
+# mkdir /tmp/java /tmp/proto
+# exit 
+```
+
+```shell
+$ docker container cp grpc_generation.sh machine-grpc:/usr/local/bin/
+$ docker container cp greet.proto machine-grpc:/tmp/proto/greet.proto
+```
+
+```shell
+$ docker container start -ai machine-grpc
+# export PATH="$PATH:$HOME/.local/protoc/bin"
+# sh /usr/local/bin/grpc_generation.sh greet.proto
+```
+
+1.e. Quitter le conteneur
 
 ```shell
 # exit
 ```
 
-1.e. Rétablir le terminal du conteneur
+1.f. Rétablir le terminal du conteneur
 
 ```shell
 $ docker container start -ia machine-grpc
